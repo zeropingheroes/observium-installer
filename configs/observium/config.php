@@ -8,7 +8,7 @@ $config['db_name']      = 'observium';
 
 $config['install_dir'] = "/opt/observium";
 
-$config['snmp']['community'] = array("public");
+$config['snmp']['community'][0] = "$OBSERVIUM_DEFAULT_SNMPV2C_COMMUNITY";
 
 $config['auth_mechanism'] = "mysql";
 

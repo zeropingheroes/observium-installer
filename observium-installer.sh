@@ -29,6 +29,7 @@ fi
 
 # Set additional environment variables
 export OBSERVIUM_FQDN=$(hostname -f)
+export OBSERVIUM_DEFAULT_SNMPV2C_COMMUNITY=${OBSERVIUM_DEFAULT_SNMPV2C_COMMUNITY:-public}
 
 # Prevent apt prompting for input
 export DEBIAN_FRONTEND="noninteractive"
@@ -91,7 +92,7 @@ mkdir -p /opt/observium/rrd/
              http://svn.observium.org/svn/observium/branches/stable /opt/observium/
 
 # Install Observium configuration
-/usr/bin/envsubst '$OBSERVIUM_MYSQL_PASSWORD' < $SCRIPT_DIR/configs/observium/config.php > /opt/observium/config.php
+/usr/bin/envsubst '$OBSERVIUM_MYSQL_PASSWORD $OBSERVIUM_DEFAULT_SNMPV2C_COMMUNITY' < $SCRIPT_DIR/configs/observium/config.php > /opt/observium/config.php
 
 # Run Observium upgrade script to create database structure
 cd /opt/observium && /opt/observium/discovery.php -u
