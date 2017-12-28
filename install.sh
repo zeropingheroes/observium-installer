@@ -12,6 +12,12 @@ if [ $EUID != 0 ]; then
     exit $?
 fi
 
+# If there is an .env file use it
+# to set the variables
+if [ -f $SCRIPT_DIR/.env ]; then
+    source $SCRIPT_DIR/.env
+fi
+
 # Check all required variables are set
 : "${OBSERVIUM_MYSQL_ROOT_PASSWORD:?must be set}"
 : "${OBSERVIUM_MYSQL_PASSWORD:?must be set}"
