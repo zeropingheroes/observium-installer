@@ -3,6 +3,7 @@
 # Exit if there is an error
 set -e
 
+
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # If script is executed as an unprivileged user
@@ -106,3 +107,9 @@ chown -R www-data:www-data /opt/observium
 
 # Install Cron jobs
 cp $SCRIPT_DIR/configs/cron.d/observium /etc/cron.d/observium
+
+# Download observium-nmap-autodiscover.sh
+/usr/bin/git clone https://github.com/zeropingheroes/observium-nmap-autodiscover.git /usr/local/bin/observium-nmap-autodiscover
+
+# Scan the local network and add any devices running SNMP
+/usr/local/bin/observium-nmap-autodiscover/observium-nmap-autodiscover.sh
