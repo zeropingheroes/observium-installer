@@ -49,6 +49,7 @@ export DEBIAN_FRONTEND="noninteractive"
                         mtr-tiny \
                         mysql-client \
                         mysql-server \
+                        nmap \
                         php-pear \
                         php7.0-cli \
                         php7.0-gd \
