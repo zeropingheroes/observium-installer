@@ -114,7 +114,7 @@ cp $SCRIPT_DIR/configs/cron.d/observium /etc/cron.d/observium
 /usr/bin/git clone https://github.com/zeropingheroes/observium-alerts.git /usr/local/bin/observium-alerts
 
 # Import alerts
-/usr/local/bin/observium-alerts/observium-alerts.sh import /usr/local/bin/observium-alerts/sample_alerts.sql
+/usr/local/bin/observium-alerts/observium-alerts.sh import /usr/local/bin/observium-alerts/sample_alerts.sql --quiet
 
 # Download observium-nmap-autodiscover.sh
 /usr/bin/git clone https://github.com/zeropingheroes/observium-nmap-autodiscover.git /usr/local/bin/observium-nmap-autodiscover
