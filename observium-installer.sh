@@ -121,3 +121,7 @@ cp $SCRIPT_DIR/configs/cron.d/observium /etc/cron.d/observium
 
 # Scan the local network and add any devices running SNMP
 /usr/local/bin/observium-nmap-autodiscover/observium-nmap-autodiscover.sh
+
+# Run discovery and poller on all devices
+cd /opt/observium/ && /opt/observium/discovery.php -h all
+cd /opt/observium/ && /opt/observium/poller.php -h all
