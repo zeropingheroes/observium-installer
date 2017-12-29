@@ -13,3 +13,5 @@ $config['snmp']['community'][0] = "$OBSERVIUM_DEFAULT_SNMPV2C_COMMUNITY";
 $config['auth_mechanism'] = "mysql";
 
 $config['poller-wrapper']['alerter'] = TRUE;
+
+$config['frontpage']['order'] = ['alert_table'];
